@@ -107,7 +107,7 @@ Using multiple files is easy. Simple add an additional `script` tag to `index.ht
 </html>
 ```
 
-## Re-Using Code from Previous Projects
+### Re-Using Code from Previous Projects
 
 The logic in this project is identical to previous projects. It's possible to reuse some or all of your code with very little modification. There are a few things you must do in order to re-use your code.
 
