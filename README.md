@@ -17,6 +17,7 @@ Viewing a user in the browser should show their name, timeline, followers, and f
 The page can be initialized with any user on the initial page load. The tests will always switch users prior to executing any tests.
 
 **Required CSS Selectors**
+
 |Selector|Node|Example|
 |--------|----|-------|
 |`#current-user-header`|The header element which shows the current users name.|`<h2 id="current-user-header">brianhartsock</h2>`|
@@ -38,6 +39,7 @@ There are two ways to switch users.
 1. Click on the follower or following user names which are links.
 
 **Required CSS Selectors**
+
 |Selector|Node|Example|
 |--------|----|-------|
 |`input[type=text]#switch-user-input`|The switch user text box input.|`<input type="text" id="switch-user-input />`|
@@ -50,6 +52,7 @@ There are two ways to switch users.
 Tweeting behaves the same as tweeting on the previous project. Tweets will immediately show up on the current user's timeline. All followers of the current user will see the new tweet when switching to them. After clicking _Tweet_, the tweet input box should be cleared as well.
 
 **Required CSS Selectors**
+
 |Selector|Node|Example|
 |--------|----|-------|
 |`textarea#tweet-input`|The input textarea for tweet content.|`<textarea id="tweet-input" />`|
@@ -65,6 +68,7 @@ Tweeting behaves the same as tweeting on the previous project. Tweets will immed
 Following another user can be done by entering that user's name in the follow input. When done, the current user will start following the user they just entered. That username should show up in the following list immediately. After clicking _Follow_, the input box should be cleared.
 
 **Required CSS Selectors**
+
 |Selector|Node|Example|
 |--------|----|-------|
 |`input[type=text]#follow-input`|The input textbox where the user being followed username is entered.|`<input type="text" id="follow-input" />`|
