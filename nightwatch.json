@@ -1,0 +1,13 @@
+{
+  "src_folders": ["test/nightwatch"],
+  "page_objects_path": ["test/pages"],
+  "selenium": {
+    "start_process": true,
+    "server_path": "vendor/selenium/selenium-server-standalone-2.53.0.jar"
+  },
+  "test_runner" : "mocha",
+  "test_settings": {
+    "default": {
+    }
+  }
+}
