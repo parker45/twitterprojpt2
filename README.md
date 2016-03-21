@@ -27,8 +27,6 @@ The page can be initialized with any user on the initial page load. The tests wi
 |`#following-list a`|Links (`a` tags) that are children of the following list.|`<ul id="following-ist"><li><a href="#">mary</a></li></ul>`|
 |`#follower-list a`|Links (`a` tags) that are children of the follower list.|`<ul id="follower-ist"><li><a href="#">mary</a></li></ul>`|
 
-(image)
-
 ### Switch User
 
 Switch user is the only new piece of functionality for this project. It only applies to what user should be rendered. When switching users, the follower list, following list, tweet list, and username should change to the user being requested. If it is a new user, then the user will be created on demand with empty lists. 
