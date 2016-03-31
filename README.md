@@ -21,9 +21,9 @@ The page can be initialized with any user on the initial page load. The tests wi
 |Selector|Node|Example|
 |--------|----|-------|
 |`#current-user-header`|The header element which shows the current users name.|`<h2 id="current-user-header">brianhartsock</h2>`|
-|`#tweet-list .tweet`|The node representing a tweet object.|`<div id="tweet-list"><div class="tweet">...</div></div>`|
-|`#tweet-list .tweet .tweet-username`|The node representing the username of a tweet.|`<div id="tweet-list"><div class="tweet"><p class="tweet-username">brianhartsock</p><div></div>`|
-|`#tweet-list .tweet .tweet-content`|The node representing the content of a tweet.|`<div id="tweet-list"><div class="tweet"><p class="tweet-content">Looking forward to seeing you all complete project 3</p></div></div>`|
+|`#tweet-list .tweet`|The node representing a tweet object.|`<ul id="tweet-list"><li class="tweet">...</li></ul>`|
+|`#tweet-list .tweet .tweet-username`|The node representing the username of a tweet.|`<ul id="tweet-list"><li class="tweet"><p class="tweet-username">brianhartsock</p><li></ul>`|
+|`#tweet-list .tweet .tweet-content`|The node representing the content of a tweet.|`<ul id="tweet-list"><li class="tweet"><p class="tweet-content">Looking forward to seeing you all complete project 3</p></li></ul>`|
 |`#following-list a`|Links (`a` tags) that are children of the following list.|`<ul id="following-ist"><li><a href="#">mary</a></li></ul>`|
 |`#follower-list a`|Links (`a` tags) that are children of the follower list.|`<ul id="follower-ist"><li><a href="#">mary</a></li></ul>`|
 
@@ -55,9 +55,9 @@ Tweeting behaves the same as tweeting on the previous project. Tweets will immed
 |--------|----|-------|
 |`textarea#tweet-input`|The input textarea for tweet content.|`<textarea id="tweet-input" />`|
 |`button#tweet-button`|The _Tweet_ button.|`<button id="tweet-button">Tweet</button>`|
-|`#tweet-list .tweet`|The node representing a tweet object.|`<div id="tweet-list"><div class="tweet">...</div></div>`|
-|`#tweet-list .tweet .tweet-username`|The node representing the username of a tweet.|`<div id="tweet-list"><div class="tweet"><p class="tweet-username">brianhartsock</p><div></div>`|
-|`#tweet-list .tweet .tweet-content`|The node representing the content of a tweet.|`<div id="tweet-list"><div class="tweet"><p class="tweet-content">Looking forward to seeing you all complete project 3</p></div></div>`|
+|`#tweet-list .tweet`|The node representing a tweet object.|`<ul id="tweet-list"><li class="tweet">...</li></ul>`|
+|`#tweet-list .tweet .tweet-username`|The node representing the username of a tweet.|`<ul id="tweet-list"><li class="tweet"><p class="tweet-username">brianhartsock</p><li></ul>`|
+|`#tweet-list .tweet .tweet-content`|The node representing the content of a tweet.|`<ul id="tweet-list"><li class="tweet"><p class="tweet-content">Looking forward to seeing you all complete project 3</p></li></ul>`|
 
 ![tweeting](https://cloud.githubusercontent.com/assets/309711/13910219/ff48eab6-eef4-11e5-89a3-0bb0b95dccf9.gif)
 
@@ -78,6 +78,32 @@ Following another user can be done by entering that user's name in the follow in
 ## Quick Lessons
 
 There are a few things we haven't covered in class that are important to this project.
+
+### Example Tweet HTML
+
+The project is using [Twitter Bootstrap](http://getbootstrap.com) to make thing pretty (aka add a solid CSS foundation). To make your tweet objects look like the examples, simply make sure each one looks like this, with vary text content of course:
+
+```html
+<li class="list-group-item tweet">
+  <p class="tweet-username">brian</p>
+  <p class="tweet-content">hello world</p>
+</li>
+```
+
+Multipl tweets in a list would look like:
+
+```html
+<ul id="tweet-list" class="list-group">
+  <li class="list-group-item tweet">
+    <p class="tweet-username">brian</p>
+    <p class="tweet-content">hello mary</p>
+  </li>
+  <li class="list-group-item tweet">
+    <p class="tweet-username">mary</p>
+    <p class="tweet-content">hello world</p>
+  </li>
+</ul>
+```
 
 ### CSS Selectors
 
