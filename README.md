@@ -1,6 +1,6 @@
 # CS2304 Spring 2016 - Project 3 (DUE 4/14/16)
 
-In this project we will be using [project 1](https://github.com/VTCS2304/project1) and [project 2](https://github.com/VTCS2304/project) logic to help us implement Twitter in a browser. The core logic remains unchanged for this project, we will instead focus on rendering the data into the DOM so it can be seen in a browser. This project only implements a client (browser) side component, no server side component. This means that data should be stored in memory and page refreshes will not persist data.
+In this project we will be using [project 1](https://github.com/VTCS2304/project1) and [project 2](https://github.com/VTCS2304/project2) logic to help us implement Twitter in a browser. The core logic remains unchanged for this project, we will instead focus on rendering the data into the DOM so it can be seen in a browser. This project only implements a client (browser) side component, no server side component. This means that data should be stored in memory and page refreshes will not persist data.
 
 ## Project Requirements
 
