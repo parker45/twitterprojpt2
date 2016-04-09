@@ -24,7 +24,7 @@ The page can be initialized with any user on the initial page load. The tests wi
 |`#tweet-list .tweet`|The node representing a tweet object.|`<ul id="tweet-list"><li class="tweet">...</li></ul>`|
 |`#tweet-list .tweet .tweet-username`|The node representing the username of a tweet.|`<ul id="tweet-list"><li class="tweet"><p class="tweet-username">brianhartsock</p><li></ul>`|
 |`#tweet-list .tweet .tweet-content`|The node representing the content of a tweet.|`<ul id="tweet-list"><li class="tweet"><p class="tweet-content">Looking forward to seeing you all complete project 3</p></li></ul>`|
-|`#following-list a`|Links (`a` tags) that are children of the following list.|`<ul id="following-ist"><li><a href="#">mary</a></li></ul>`|
+|`#following-list a`|Links (`a` tags) that are children of the following list.|`<ul id="following-list"><li><a href="#">mary</a></li></ul>`|
 |`#follower-list a`|Links (`a` tags) that are children of the follower list.|`<ul id="follower-ist"><li><a href="#">mary</a></li></ul>`|
 
 ### Switch User
@@ -42,7 +42,7 @@ There are two ways to switch users.
 |--------|----|-------|
 |`input[type=text]#switch-user-input`|The switch user text box input.|`<input type="text" id="switch-user-input />`|
 |`button#switch-user-button`|The switch user button|`<button id="switch-user-button">Switch User</button>`|
-|`#following-list a`|Links (`a` tags) that are children of the following list.|`<ul id="following-ist"><li><a href="#">mary</a></li></ul>`|
+|`#following-list a`|Links (`a` tags) that are children of the following list.|`<ul id="following-list"><li><a href="#">mary</a></li></ul>`|
 |`#follower-list a`|Links (`a` tags) that are children of the follower list.|`<ul id="follower-ist"><li><a href="#">mary</a></li></ul>`|
 
 ### Tweet
@@ -71,7 +71,7 @@ Following another user can be done by entering that user's name in the follow in
 |--------|----|-------|
 |`input[type=text]#follow-input`|The input textbox where the user being followed username is entered.|`<input type="text" id="follow-input" />`|
 |`button#follow-button`|The _Follow_ button.|`<button id="follow-button">Follow</button>`|
-|`#following-list a`|Links (`a` tags) that are children of the following list.|`<ul id="following-ist"><li><a href="#">mary</a></li></ul>`|
+|`#following-list a`|Links (`a` tags) that are children of the following list.|`<ul id="following-list"><li><a href="#">mary</a></li></ul>`|
 
 ![following](https://cloud.githubusercontent.com/assets/309711/13910148/fb247096-eef3-11e5-9204-bf60a231aef1.gif)
 
