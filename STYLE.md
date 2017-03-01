@@ -1,6 +1,6 @@
 # Style Guidelines
 
-The following style guidelines should be followed to ensure readabilty and reduce the probability of bugs.
+The following style guidelines should be followed to ensure readability and reduce the probability of bugs.
 
 ## Use === and !== instead of == and !=
 > It is considered good practice to use the type-safe equality operators `===` and `!==` instead of their regular counterparts `==` and `!=`.
@@ -37,6 +37,19 @@ if(a === b) {
 
 http://eslint.org/docs/rules/indent
 
+## Declare your variables.
+
+Always declare variables using the `var` syntax. _This rule can help you locate potential ReferenceErrors resulting from misspellings of variable and parameter names, or accidental implicit globals (for example, from forgetting the var keyword in a for loop initializer)._[<sup>1</sup>][1]
+
+```javascript
+var a = 1;  // Good
+b = 2;      // Bad
+```
+
+http://eslint.org/docs/rules/no-undef
+
+[1]: http://eslint.org/docs/rules/no-undef
+
 ## Always use curly braces for block statements
 
 > JavaScript allows the omission of curly braces when a block contains only one statement. However, it is considered by many to be best practice to never omit curly braces around blocks, even when they are optional, because it can lead to bugs and reduces code clarity. So the following:
@@ -49,15 +62,25 @@ http://eslint.org/docs/rules/indent
     foo++;
   }
   ```
+> There are, however, some who prefer to only use braces when there is more than one statement to be executed.
 
 http://eslint.org/docs/rules/curly
 
-## Limit Cyclomatic Complexity
+## Disallow variable redeclaration
 
-> Cyclomatic complexity measures the number of linearly independent paths through a program's source code.
+> In JavaScript, it’s possible to redeclare the same variable name using var. This can lead to confusion as to where the variable is actually declared and initialized.
 
-For this assignemnt, we will use a cyclomatic complexity of 15 as the limit. This means more than 15 code paths through a single function will result in a style violation
+> Examples of **incorrect** code for this rule:
+  ```javascript
+  var a = 3;
+  // ...
+  var a = 10;
+  ```
+> Examples of **correct** code for this rule:
+  ```javascript
+  var a = 3;
+  //...
+  a = 10;
+  ```
 
-http://eslint.org/docs/rules/complexity
-
-
+http://eslint.org/docs/rules/no-redeclare

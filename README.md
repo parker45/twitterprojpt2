@@ -1,14 +1,12 @@
-# CS2304 Spring 2016 - Project 3 (DUE 4/14/16)
+# Project 2 (DUE 4/14/16)
 
-In this project we will be using [project 1](https://github.com/VTCS2304/project1) and [project 2](https://github.com/VTCS2304/project2) logic to help us implement Twitter in a browser. The core logic remains unchanged for this project, we will instead focus on rendering the data into the DOM so it can be seen in a browser. This project only implements a client (browser) side component, no server side component. This means that data should be stored in memory and page refreshes will not persist data.
+In this project we will be using [project 1](https://github.com/VTCS2304/project1) logic to help us implement Twitter in a browser. The core logic remains unchanged for this project, we will instead focus on rendering the data into the DOM so it can be seen in a browser. This project only implements a client (browser) side component, no server side component. This means that data should be stored in memory and page refreshes will not persist data.
 
 ## Project Requirements
 
 You must implement the user interface for viewing a users timeline, tweeting, following, and switching users. The logic for how these work is identical to first two projects, with the addition of switch user capabilities.
 
 This project should be implemented entirely in JavaScript, HTML, and CSS. You are free to modify the HTML, CSS, and JavaScript provided as long as you preserve the required CSS selectors. The grading script will use these CSS selectors to automatically grade each project.
-
-Future projects will require the implementation of additional capabilities (retweet, favorite, unfollow) and integrate with a server side component for persistent.
 
 ### Timeline, Followers, and Following
 
@@ -23,13 +21,13 @@ The page can be initialized with any user on the initial page load. The tests wi
 |`#current-user-header`|The header element which shows the current users name.|`<h2 id="current-user-header">brianhartsock</h2>`|
 |`#tweet-list .tweet`|The node representing a tweet object.|`<ul id="tweet-list"><li class="tweet">...</li></ul>`|
 |`#tweet-list .tweet .tweet-username`|The node representing the username of a tweet.|`<ul id="tweet-list"><li class="tweet"><p class="tweet-username">brianhartsock</p><li></ul>`|
-|`#tweet-list .tweet .tweet-content`|The node representing the content of a tweet.|`<ul id="tweet-list"><li class="tweet"><p class="tweet-content">Looking forward to seeing you all complete project 3</p></li></ul>`|
+|`#tweet-list .tweet .tweet-content`|The node representing the content of a tweet.|`<ul id="tweet-list"><li class="tweet"><p class="tweet-content">Looking forward to seeing you all complete project 2</p></li></ul>`|
 |`#following-list a`|Links (`a` tags) that are children of the following list.|`<ul id="following-list"><li><a href="#">mary</a></li></ul>`|
 |`#follower-list a`|Links (`a` tags) that are children of the follower list.|`<ul id="follower-ist"><li><a href="#">mary</a></li></ul>`|
 
 ### Switch User
 
-Switch user is the only new piece of functionality for this project. It only applies to what user should be rendered. When switching users, the follower list, following list, tweet list, and username should change to the user being requested. If it is a new user, then the user will be created on demand with empty lists. 
+Switch user is the only new piece of functionality for this project. It only applies to what user should be rendered. When switching users, the follower list, following list, tweet list, and username should change to the user being requested. If it is a new user, then the user will be created on demand with empty lists.
 
 There are two ways to switch users.
 
@@ -57,7 +55,7 @@ Tweeting behaves the same as tweeting on the previous project. Tweets will immed
 |`button#tweet-button`|The _Tweet_ button.|`<button id="tweet-button">Tweet</button>`|
 |`#tweet-list .tweet`|The node representing a tweet object.|`<ul id="tweet-list"><li class="tweet">...</li></ul>`|
 |`#tweet-list .tweet .tweet-username`|The node representing the username of a tweet.|`<ul id="tweet-list"><li class="tweet"><p class="tweet-username">brianhartsock</p><li></ul>`|
-|`#tweet-list .tweet .tweet-content`|The node representing the content of a tweet.|`<ul id="tweet-list"><li class="tweet"><p class="tweet-content">Looking forward to seeing you all complete project 3</p></li></ul>`|
+|`#tweet-list .tweet .tweet-content`|The node representing the content of a tweet.|`<ul id="tweet-list"><li class="tweet"><p class="tweet-content">Looking forward to seeing you all complete project 2</p></li></ul>`|
 
 ![tweeting](https://cloud.githubusercontent.com/assets/309711/13910219/ff48eab6-eef4-11e5-89a3-0bb0b95dccf9.gif)
 
@@ -90,7 +88,7 @@ The project is using [Twitter Bootstrap](http://getbootstrap.com) to make thing 
 </li>
 ```
 
-Multipl tweets in a list would look like:
+Multiple tweets in a list would look like:
 
 ```html
 <ul id="tweet-list" class="list-group">
@@ -160,7 +158,7 @@ This project adds a lot of new concepts. [Twitter Bootstrap](http://getbootstrap
 * Use [`window.localStorage`](https://developer.mozilla.org/en-US/docs/Web/API/Window/localStorage) to persist tweet information between page reloads.
 * Add [CSS transitions](https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_Transitions/Using_CSS_transitions) when changing the DOM.
 * Use [`window.history`](https://developer.mozilla.org/en-US/docs/Web/API/History_API) to manipulate the URL.
-* Add validation to input elements (i.e. not empty, less than 140 characters) 
+* Add validation to input elements (i.e. not empty, less than 140 characters)
 
 Flair can be almost anything. Flair should be documented in [`FLAIR.md`](FLAIR.md) and **each piece of flair must be at least 10 lines code**. Flair is what you make it. Ten lines of code is almost nothing and can be dded with almost no effort, but taking the time to learn something new is invaluable and will make you a better software developer.
 
@@ -168,27 +166,27 @@ Flair can be almost anything. Flair should be documented in [`FLAIR.md`](FLAIR.m
 
 ## Getting Started
 
-This project is a bit different than previous projects. It can be run in a browser, but node is still used to run tests and linting.
+1. Accept the [Github Classroom Invite](https://classroom.github.com/assignment-invitations/f7986e8164db6e25dd833c266f3f5e03). This will create a copy of this repository that only you have access to view or edit.
+1. Clone (download) your private copy of this repository. This can by done on the command line with the following commands, replacing `brianhartsock` with your Github username.
 
-1. Create a fork of the [project](https://github.com/VTCS2304/project3) in your personal Github account. ![2016-01-10_12-16-05](https://cloud.githubusercontent.com/assets/309711/12222786/6576776a-b794-11e5-869b-ea76c2e86d13.png)
-1. Open a terminal to the directory of your choice and run the following commands:
-
-  ```bash
-  git clone git@github.com:<insert your Github username here>/project3.git
-  cd project3
-  npm install
   ```
+  $ git clone https://github.com/VTCS2304/project2-brianhartsock.git
+  $ cd project2-brianhartsock
+  $ npm install
+  ```
+
+See the [cloning video](https://youtu.be/RXhjwPclwag) for additional guidance.
 
 ## Coding
 
 Most of your coding will take place in the following files:
 
 * [`index.html`](index.html) - The HTML page loaded in the browser.
-* [`index.js`](index.js) - Where most of your JavaScript should go. 
+* [`index.js`](index.js) - Where most of your JavaScript should go.
 
 Please avoid coding JavaScript directly in `index.html`. That's typically considered a bad practice as the code isn't unit testable.
 
-Anything in the [Javascript Standard Library](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference) and [Web APIs]() are fair game to use to complete the assignment. Node.js libraries and other 3rd party libraries, such as jQuery, are not needed and **should not be used**. The already provided modules in [`package.json`](package.json) are used for testing and are fine to include in your submission.
+Anything in the [Javascript Standard Library](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference) and [Web APIs](https://developer.mozilla.org/en-US/docs/Web/API) are fair game to use to complete the assignment. Node.js libraries and other 3rd party libraries, such as jQuery, are not needed and **should not be used**. The already provided modules in [`package.json`](package.json) are used for testing and are fine to include in your submission.
 
 ## Running the Application
 
@@ -204,14 +202,14 @@ Simply open `index.html` in a browser. One of the easiest ways to do this is to 
 C:\project3> index.html
 ```
 
-**Debian Linux Disros**
+**Debian Linux Distros**
 ```bash
 > sensible-browser index.html
 ```
 
 ## Tests
 
-Tests execute in a browser for this assignment using [Selenium](http://www.seleniumhq.org). To run tests, just type `npm test` and Firefox will execute your tests.
+Tests execute in a browser for this assignment using [Selenium](http://www.seleniumhq.org). To run tests, just type `npm test` and Chrome will execute your tests. Also, `npm run test-slow` will run the tests slower to allow viewers to follow along more easily.
 
 This time around, [style](STYLE.md) rules can be checked with [ESLint](http://eslint.org). Just run `npm run lint` to see a list of style violations.
 
@@ -231,11 +229,6 @@ Note that `git add .` will add all files in the project directory to the submiss
 ## Honor Code
 
 This is an **individual project** and should not be done in a group. Do not plagiarize other students or online code to complete the assignment.
-
-In addition to the normal honor code rules, the following additional rules are in effect for your usage of Github.
-
-* Do not add collaborators to your Github fork. This is audited in Github and will be visible to the instructor.
-* Do not open pull requests for your work back into the main repository. This will allow all other students to see your work.
 
 ## Tips
 

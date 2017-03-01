@@ -1,0 +1,38 @@
+{
+  "env": {
+    "node": true
+  },
+  "rules": {
+    "no-console": "off",
+    "no-debugger": "off",
+    "no-cond-assign": "warn",
+    "no-constant-condition": "warn",
+    "no-control-regex": "warn",
+    "no-dupe-args": "warn",
+    "no-dupe-keys": "warn",
+    "no-duplicate-case": "warn",
+    "no-empty-character-class": "warn",
+    "no-empty": "warn",
+    "no-ex-assign": "warn",
+    "no-extra-boolean-cast": "warn",
+    "no-extra-semi": "warn",
+    "no-func-assign": "warn",
+    "no-invalid-regexp": "warn",
+    "no-irregular-whitespace": "warn",
+    "no-obj-calls": "warn",
+    "no-regex-spaces": "warn",
+    "no-sparse-arrays": "warn",
+    "no-unexpected-multiline": "warn",
+    "no-unreachable": "warn",
+    "no-unsafe-finally": "warn",
+    "use-isnan": "warn",
+    "valid-typeof": "warn",
+    "no-redeclare": "error",
+    "no-self-assign": "warn",
+    "no-undef": "error",
+    "no-unused-vars": "warn",
+    "curly": "error",
+    "eqeqeq": "error",
+    "indent": ["error", 2]
+  }
+}

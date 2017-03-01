@@ -1,35 +1,36 @@
 var path = require('path');
+var chromedriver = require('chromedriver');
 var url = 'file://' + path.join(__dirname, '..', '..', 'index.html');
 
 var users = {};
-var invalidStrings = [Math.floor(Math.random() * 10), true, null, undefined, function() {}, {}, [], ''];
+var delay = parseInt(process.env.DELAY || 100);
 
 function switchUser(client, user) {
   return client
     .setValue('input[type=text]#switch-user-input', user)
-    .pause(1000)
+    .pause(delay)
     .click('button#switch-user-button')
-    .pause(1000)
+    .pause(delay)
 }
 
 function tweet(client, content) {
   return client
     .setValue('textarea#tweet-input', content)
-    .pause(1000)
+    .pause(delay)
     .click('button#tweet-button')
-    .pause(1000);
+    .pause(delay);
 }
 
 function follow(client, user) {
   return client
     .setValue('input[type=text]#follow-input', user)
-    .pause(1000)
+    .pause(delay)
     .click('button#follow-button')
-    .pause(1000);
-};
+    .pause(delay);
+}
 
 function random() {
-  do { 
+  do {
     var name = 'random.name' + Math.floor(Math.random() * 100000);
   } while(users.hasOwnProperty(name));
   users[name] = true;
@@ -41,21 +42,29 @@ describe('twitter', function() {
   var randomUser2;
   var randomUser3;
 
+  before(function(client, done) {
+    chromedriver.start();
+    done();
+  });
+
+  after(function(client, done) {
+    client.end(function() {
+      chromedriver.stop();
+      done()
+    });
+  });
+
   beforeEach(function(client, done) {
     randomUser1 = random();
     randomUser2 = random();
     randomUser3 = random();
     client
       .url(url)
-      .pause(1000);
+      .pause(delay);
     switchUser(client, randomUser1);
     done();
   });
-  after(function(client, done) {
-    client.end(function() {
-      done()
-    });
-  });
+
   it('shows correct username', function(client) {
     client.expect.element('#current-user-header').text.to.equal(randomUser1);
   });
@@ -76,7 +85,7 @@ describe('twitter', function() {
       follow(client, randomUser2);
       client.expect.element('#following-list a').to.be.present;
       client.click('#following-list a')
-        .pause(1000)
+        .pause(delay)
         .expect.element('#current-user-header').text.to.equal(randomUser2);
     });
     it('can switch users with follower links', function(client) {
@@ -84,7 +93,7 @@ describe('twitter', function() {
       switchUser(client, randomUser2);
       client.expect.element('#follower-list a').to.be.present;
       client.click('#follower-list a')
-        .pause(1000)
+        .pause(delay)
         .expect.element('#current-user-header').text.to.equal(randomUser1);
     });
   });
