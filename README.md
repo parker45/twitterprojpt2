@@ -27,7 +27,7 @@ The page can be initialized with any user on the initial page load. The tests wi
 
 ### Switch User
 
-Switch user is the only new piece of functionality for this project. It only applies to what user should be rendered. When switching users, the follower list, following list, tweet list, and username should change to the user being requested. If it is a new user, then the user will be created on demand with empty lists.
+Switch user is the only new piece of functionality for this project. It only applies to what user should be rendered. When switching users, the follower list, following list, tweet list, and username should change to the user being requested. The `signup` function from [project 1](https://github.com/VTCS2304/project1) should be used here to create the user if it does not exist.
 
 There are two ways to switch users.
 
@@ -62,6 +62,8 @@ Tweeting behaves the same as tweeting on the previous project. Tweets will immed
 ### Follow
 
 Following another user can be done by entering that user's name in the follow input. When done, the current user will start following the user they just entered. That username should show up in the following list immediately. After clicking _Follow_, the input box should be cleared.
+
+To make testing easier, please call `signup` on the user being followed so that switching to that user first is unnecessary.
 
 **Required CSS Selectors**
 
