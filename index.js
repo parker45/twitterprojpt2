@@ -351,7 +351,12 @@ function unfollowing(e){
 
 function countCharacters(e){
 
-  count.innerHTML = "Remaining Characters: " + (140 - tweetInput.value.length);
+  if(tweetInput.value.length <=140){
+    count.innerHTML = "Remaining Characters: " + (140 - tweetInput.value.length);
+  }
+  else {
+    count.innerHTML = "TOO MANY CHARACTERS"
+  }
 }
 
 

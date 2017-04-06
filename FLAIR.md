@@ -21,7 +21,12 @@ function unfollowing(e){
   I added a character counter on the tweetInput box
   function countCharacters(e){
 
-    count.innerHTML = "Remaining Characters: " + (140 - tweetInput.value.length);
+    if(tweetInput.value.length <=140){
+      count.innerHTML = "Remaining Characters: " + (140 - tweetInput.value.length);
+    }
+    else {
+      count.innerHTML = "TOO MANY CHARACTERS"
+    }
   }
 
   I added input validation to every input and created alerts when the input wasn't correct
