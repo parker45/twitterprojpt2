@@ -5,3 +5,7 @@
 .tweet-username {
   font-weight: bold;
 }
+
+body {
+  background-color: #eee;
+}
