@@ -17,6 +17,13 @@ function unfollowing(e){
 }
 
 - Second piece
+
+  I added a character counter on the tweetInput box
+  function countCharacters(e){
+
+    count.innerHTML = "Remaining Characters: " + (140 - tweetInput.value.length);
+  }
+
   I added input validation to every input and created alerts when the input wasn't correct
   function updateFollowing(e){
 
@@ -26,7 +33,7 @@ function unfollowing(e){
       followerInput.value = '';
     }
     else {
-      alert('input a valid username to follow');
+      alert('Input a valid username to follow');
     }
   }
 

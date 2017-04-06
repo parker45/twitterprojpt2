@@ -162,6 +162,7 @@ var followingList;
 var timelineList;
 var currentUserHeader;
 var unfollowButton;
+var count;
 
 function switchUser(e){
   if(isValidString(switchUserInput.value) && switchUserInput.value !== currentUser){
@@ -203,10 +204,12 @@ function addTweet(e){
     tweet(currentUser, tweetInput.value);
     displayTimeline(currentUser);
     tweetInput.value = '';
+    count.innerHTML = '';
   }
   else{
     alert('Please enter a valid username or tweet');
     tweetInput.value = '';
+    count.innerHTML = '';
     return false;
   }
 }
@@ -346,6 +349,11 @@ function unfollowing(e){
 
 }
 
+function countCharacters(e){
+
+  count.innerHTML = "Remaining Characters: " + (140 - tweetInput.value.length);
+}
+
 
 window.addEventListener('load', function() {
   currentUserHeader = document.querySelector('#current-user-header');
@@ -362,9 +370,13 @@ window.addEventListener('load', function() {
   tweetInput = document.querySelector('textarea#tweet-input');
   tweetButton = document.querySelector('button#tweet-button');
 
+
+  count = document.getElementById('count');
+
   switchUserButton.addEventListener('click', switchUser);
   followButton.addEventListener('click', updateFollowing);
   tweetButton.addEventListener('click', addTweet);
-  unfollowButton.addEventListener('click', unfollowing)
+  unfollowButton.addEventListener('click', unfollowing);
+  tweetInput.addEventListener('keyup', countCharacters);
 
 })
